@@ -27,11 +27,9 @@ function logResponse(data) {
 function formatSearchResultItem(url, thumbnailURL, title, descr, pubDate) {
     var result = 
     '<li class="row search-result">' +
-        '<div class="aspect-ratio">' +
             '<div class="result-thumb col-sm-6 col-md-4">' +
                 '<a href="' + url + '" target="_blank"><img src="' + thumbnailURL + '" alt="' + descr + '"></a>' +
             '</div>' +
-        '</div>' +
         '<div class="result-info col-sm-6 col-md-8">' +
             '<h2 class="result-title">' +
                 '<a href="' + url + '" target="_blank">' + title + '</a>' +
@@ -94,9 +92,44 @@ function loadMore(apiResponse) {
         }
    }
 }
+    
+function getVideoURL(event) {
+    var regURL = $(event.currentTarget).find("a").first().attr("href");
+    var vidID = regURL.slice(regURL.indexOf("=") + 1);
+    var embedURL = "https://www.youtube.com/embed/" + vidID;
+    return embedURL;
+}
+    
+function setLightboxURL(url) {
+    var src = $("#modal-video")[0].attributes.src;
+    src.value = url;
+    src.textContent = url;
+}
+    
+function openLightbox(event) {
+    var urlForLightbox = getVideoURL(event);
+    setLightboxURL(urlForLightbox);
+    $("body").addClass("lightboxIsOpen");
+    closeLightboxOnClick();
+}
+    
+function closeLightbox() {
+    setLightboxURL("");
+    $("body").removeClass("lightboxIsOpen");
+    $(".modal-page-wrap").off("click");
+}
+    
+function openLightboxOnClick() {
+    $(".search-results").on("click", ".search-result", openLightbox);
+}
+    
+function closeLightboxOnClick() {
+    $(".modal-page-wrap").on("click", closeLightbox)
+}
 
 
 searchYouTubeOnSubmit();
+openLightboxOnClick();
 $(window).scroll(bindScroll);
     
 });

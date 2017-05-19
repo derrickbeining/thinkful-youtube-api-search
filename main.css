@@ -1,10 +1,16 @@
 html {
     font-size: 16px;
+    height: 100%;
 }
 
 html * {
     font-size: inherit;
     transition: all 0.1s ease;
+}
+
+body {
+    position: relative;
+    height: 100%;
 }
 
 img {
@@ -15,6 +21,37 @@ img {
 
 input[type="text"] {
     font-size: inherit;
+}
+
+.modal-lightbox {
+    margin: 0 auto;
+    max-width: 600px;
+    pointer-events: none;
+    position: relative;
+    top: 25%;
+    width: 90%;
+    z-index: -1;
+}
+
+.modal-page-wrap {
+    background-color: rgba(0, 0, 5, 0.5);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    position: fixed;
+    z-index: -2;
+}
+
+.lightboxIsOpen .modal-lightbox {
+    pointer-events: auto;
+    z-index: 3;
+    transition: all 0.2s ease;
+}
+
+.lightboxIsOpen .modal-page-wrap {
+    opacity: 100;
+    z-index: 2;
+    transition: all 0.2s ease;
 }
 
 .page-heading {

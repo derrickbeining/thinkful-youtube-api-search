@@ -10,8 +10,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
-    <body>
-        <main>
+    <body class="">
+        <div class="modal-page-wrap">
+            <div class="modal-lightbox">
+                <iframe id="modal-video" width="100%" height="337px" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <main>            
             <div class="container">
                 <header>
                     <h1 class="w100 text-center page-heading">YouTube Search</h1>
@@ -32,11 +37,9 @@
         <!--
          Template for JS search result insertion:
                         '<li class="row search-result">' +
-                            '<div class="aspect-ratio">' +
                                 '<div class="result-thumb col-sm-6 col-md-4">' +
                                     '<a href="' + url + '" target="_blank"><img src="' + thumbnailURL + '" alt="' + descr + '"></a>' +
                                 '</div>' +
-                            '</div>' +
                             '<div class="result-info col-sm-6 col-md-8">' +
                                 '<h2 class="result-title">' +
                                     '<a href="' + url + '" target="_blank">' + title + '</a>' +
