@@ -60,7 +60,6 @@ function formatSearchResultsToHTML(apiResponse) {
 }
     
 function renderSearchResults(apiResponse) {
-    console.log(apiResponse);
     $(".search-results").html(formatSearchResultsToHTML(apiResponse));
 }
 
