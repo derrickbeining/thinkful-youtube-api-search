@@ -1,0 +1,146 @@
+html {
+    font-size: 16px;
+}
+
+html * {
+    font-size: inherit;
+    transition: all 0.1s ease;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.page-heading {
+    color: #ef0000;
+    font-size: 2rem;
+}
+
+.red-back {
+    background-color: #ef0000;
+}
+
+.result-info *{
+    margin: 0;
+}
+
+
+.result-description {
+    font-size: 0.8rem;
+    margin: 5px auto;
+}
+
+.result-description-header {
+    font-size: 0.8rem;
+    margin: 5px auto;
+}
+.result-pub-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    margin: 5px auto;
+}
+
+.result-pub-date-header {
+    display: inline-block;;
+    font-size: 0.8rem;
+    margin: 5px auto;
+}
+
+.result-thumb {
+/*    max-height: 200px;*/
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+
+}
+
+.result-title {
+    font-size: 1.0rem;
+    margin: 10px auto ;
+}
+
+.search-result {
+    margin: 15px auto;
+    padding: 0px;
+    position: relative;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.search-result:hover {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+
+.search-results {
+    margin-left: 10px;
+    list-style-type: none;
+    width: 90%;
+}
+
+.search-results a {
+    color: inherit;
+}
+
+.search-results a:hover {
+    color: #ef0000;
+    text-decoration-line: none;
+}
+
+.search-results li {
+    counter-increment: step-counter;
+}
+
+.search-results li::before {
+    background-color: #ef0000;
+    color: #fff;
+    content: counter(step-counter);
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-width: calc(1em * 2);
+    padding: 3px;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+
+@media only screen and (min-width: 768px) {
+    .search-results {
+        margin: 0 auto;
+    }
+    
+    .search-results li::before {
+        background-color: rgba(0, 0, 0, 0);
+        color: #ef0000;
+        font-size: 2rem;
+        left: calc(-2.5em);
+        text-align: right;
+        top: calc(50% - 1.0rem);
+        z-index: 0;
+    }
+}
+
+.section-divider {
+    border-bottom: 5px red solid;
+    border-bottom-style: dashed;
+    margin: 30px auto;
+    width: 100%;
+}
+
+.white-text {
+    color: white;
+}
+
+.white-text:hover {
+    color: white;
+}
+
+.white-text:focus {
+    color: white;
+}

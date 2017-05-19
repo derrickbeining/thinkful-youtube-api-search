@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Search YouTube Videos</title>
+        <link rel="stylesheet" type="tex/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <header>
+                    <h1 class="w100 text-center page-heading">YouTube Search</h1>
+                </header>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <form action="">
+                            <p><input type="text" id="search" placehold="Type here to search..." autocomplete="off" class="form-control" /></p>
+                            <p><input type="submit" value="Search" class="form-control btn red-back white-text"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="section-divider"></div>
+                <div class="row">
+                    <ol class="search-results">
+        <!--
+         Template for JS search result insertion:
+                        '<li class="row search-result">' +
+                            '<div class="aspect-ratio">' +
+                                '<div class="result-thumb col-sm-6 col-md-4">' +
+                                    '<a href="' + url + '" target="_blank"><img src="' + thumbnailURL + '" alt="' + descr + '"></a>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="result-info col-sm-6 col-md-8">' +
+                                '<h2 class="result-title">' +
+                                    '<a href="' + url + '" target="_blank">' + title + '</a>' +
+                                '</h2>' +
+                                '<h3 class="result-description-header">Description: </h3>' +
+                                '<p class="result-description">' + descr + '</p>' +
+                                '<h4 class="result-pub-date-header">Published: &nbsp; </h4>' + 
+                                '<time class="result-pub-date">' + pubDate + '</time>' +
+                            '</div>' +
+                        '</li>';       
+        -->
+                    </ol>
+                    <p class="col-xs-10 col-xs-offset-1 hidden" id="loading-results" href="#">Loading more results, unless there aren't any more...</p>
+                </div>
+            </div>
+            
+        </main>
+        
+        <script type= "text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+<!--        <script src="https://apis.google.com/js/client.js?onload=init"></script>-->
+    </body>
+</html>
