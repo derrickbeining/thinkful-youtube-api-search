@@ -68,10 +68,12 @@ function searchYouTubeOnSubmit() {
     $("form").on("submit", function(e) {
         e.preventDefault();
         var query = $("#search").val();
+        var inputPlaceholder = $("#search")[0].attributes.placeholder.textContent;
         if (query) {
-            requestYouTubeSearchResults(query, renderSearchResults);   
+            requestYouTubeSearchResults(query, renderSearchResults);
+            inputPlaceholder = "Type here to search...";
         } else {
-            
+            inputPlaceholder = "Hey! I said type here to search...";
         }
     });
 }
