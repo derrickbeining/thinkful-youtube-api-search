@@ -85,11 +85,13 @@ function loadMore(apiResponse) {
 
  function bindScroll(){
     if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-        var q = searchState.query;
-        var pageToken = searchState.nextPageToken;
-        $(window).unbind('scroll');
-        $("#loading-results").removeClass("hidden");
-        requestYouTubeSearchResults(q, pageToken, loadMore);
+        if(searchState.query) {
+            var q = searchState.query;
+            var pageToken = searchState.nextPageToken;
+            $(window).unbind('scroll');
+            $("#loading-results").removeClass("hidden");
+            requestYouTubeSearchResults(q, pageToken, loadMore);
+        }
    }
 }
 
