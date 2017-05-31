@@ -20,9 +20,6 @@ function requestYouTubeSearchResults(query, pageToken, callback) {
     $.getJSON(YOUTUBE_SEARCH_ENDPOINT, data, callback);
 }
 
-function logResponse(data) {
-    console.log(data);
-}
     
 function formatSearchResultItem(url, thumbnailURL, title, descr, pubDate) {
     var result = 
